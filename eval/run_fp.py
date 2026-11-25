@@ -69,7 +69,7 @@ def main():
     ap.add_argument("--cases", default=os.path.join(EVAL, "fp_cases.json"))
     ap.add_argument("--base", default="http://127.0.0.1:3002")
     ap.add_argument("--conditions", default="baseline,skills")
-    ap.add_argument("--model", default="claude-sonnet-4-6")
+    ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--max-turns", type=int, default=25)
     ap.add_argument("--timeout", type=int, default=300)
     ap.add_argument("--parallel", type=int, default=4)

@@ -12,7 +12,7 @@ Burp MCP gives it the "hands". Ablation = `--disable-slash-commands` (skills off
 
   python3 eval/run_eval.py --limit 2                 # quick: first 2 challenges, both conditions
   python3 eval/run_eval.py --conditions skills        # skills-on only
-  python3 eval/run_eval.py --model claude-opus-4-8    # override model (held constant across conditions)
+  python3 eval/run_eval.py --model claude-opus-5-5    # override model (held constant across conditions)
 
 IMPORTANT caveat: Juice Shop is famous — its solutions are in model training data,
 so it is a strong PIPELINE proof + autonomy/cost number, but a WEAK skill-delta
@@ -99,7 +99,7 @@ def run_agent(task, skills_on, model, max_turns, timeout):
     cmd = [
         "claude", "-p", task,
         "--mcp-config", MCP_CONFIG, "--strict-mcp-config",
-        "--permission-mode", "bypassPermissions",
+        "--permission-mode", "default",
         "--allowedTools", ALLOWED_TOOLS,
         "--max-turns", str(max_turns),
         "--model", model,
@@ -149,7 +149,7 @@ def main():
     ap.add_argument("--conditions", default="skills,baseline",
                     help="comma list: skills,baseline")
     ap.add_argument("--limit", type=int, default=0, help="run only first N challenges (0=all)")
-    ap.add_argument("--model", default="claude-sonnet-4-6",
+    ap.add_argument("--model", default="claude-opus-5-5",
                     help="held constant across conditions; the ablation isolates the skills")
     ap.add_argument("--max-turns", type=int, default=40)
     ap.add_argument("--timeout", type=int, default=420, help="per-run seconds")

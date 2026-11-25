@@ -77,3 +77,7 @@ research/reports/raw/
 research/reports/drafts/
 research/reports/gaps.md
 research/reports/processed.json
+
+# the_bug_hunter — local research data (never commit)
+copilot/_local/
+research_notes/

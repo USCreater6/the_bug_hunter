@@ -1,3 +1,7 @@
+> ⛔ **DISABLED in the_bug_hunter.** The autonomous hunt loop is turned off. This
+> project runs manual, in-scope testing only (see THE_BUG_HUNTER.md). Do not run
+> /autopilot against any target you do not own or are not explicitly authorized to test.
+
 ---
 name: autopilot
 description: "Run autonomous hunt loop on a target — scope check → recon → rank surface → hunt → validate → report with configurable checkpoints. Usage: /autopilot target.com [--paranoid|--normal|--yolo]"

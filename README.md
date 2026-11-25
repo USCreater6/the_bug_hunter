@@ -1,3 +1,10 @@
+<!-- the_bug_hunter -->
+> **the_bug_hunter** — a personalized copy of [USCreater6/Claude-BugHunter](https://github.com/USCreater6/Claude-BugHunter) by Sachin Sharma (MIT code / CC BY 4.0 content).
+>
+> Changes in this copy: the auto-approve engine is **disabled** (approvals on), live recon scanners are **off by default**, and AI features are pinned to `claude-opus-5-5`. This is not original authorship of the upstream work. See **THE_BUG_HUNTER.md** and **NOTICE**.
+
+---
+
 ![claude-bughunter banner](assets/banner-v2.svg)
 
 # claude-bughunter

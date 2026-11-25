@@ -17,7 +17,7 @@ Creds: env PS_EMAIL / PS_PASSWORD, else eval/.ps_creds (gitignored), else /tmp/.
 Requires: playwright (+ chromium), Burp running (agent's hands), claude CLI authed.
 
   python3 eval/run_eval_ps_auto.py --limit 4
-  python3 eval/run_eval_ps_auto.py --model claude-opus-4-8 --conditions baseline,skills
+  python3 eval/run_eval_ps_auto.py --model claude-opus-5-5 --conditions baseline,skills
 """
 import argparse
 import json
@@ -123,7 +123,7 @@ def main():
     ap.add_argument("--labs", default=os.path.join(EVAL, "ps_labs.json"))
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--conditions", default="baseline,skills")
-    ap.add_argument("--model", default="claude-sonnet-4-6")
+    ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--max-turns", type=int, default=55)
     ap.add_argument("--timeout", type=int, default=600)
     ap.add_argument("--out", default=os.path.join(EVAL, "results", "ps_auto.jsonl"))

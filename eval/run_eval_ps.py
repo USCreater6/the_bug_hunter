@@ -19,7 +19,7 @@ So the workflow is:
 
   python3 eval/run_eval_ps.py                       # all labs with instance URLs filled, both conditions
   python3 eval/run_eval_ps.py --conditions skills   # skills-on only (one instance per lab)
-  python3 eval/run_eval_ps.py --model claude-opus-4-8
+  python3 eval/run_eval_ps.py --model claude-opus-5-5
 """
 import argparse
 import json
@@ -62,7 +62,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--labs", default=os.path.join(EVAL, "ps_labs.json"))
     ap.add_argument("--conditions", default="skills,baseline")
-    ap.add_argument("--model", default="claude-sonnet-4-6",
+    ap.add_argument("--model", default="claude-opus-5-5",
                     help="held constant across conditions; the ablation isolates the skills")
     ap.add_argument("--max-turns", type=int, default=60)
     ap.add_argument("--timeout", type=int, default=900, help="per-run seconds (labs are multi-step)")

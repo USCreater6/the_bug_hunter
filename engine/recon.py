@@ -370,6 +370,10 @@ def classes_for_param(name, url=""):
 def _gau_urls(scope, log):
     """Passive: gau historical parameterized URLs (in-scope). url -> source."""
     import subprocess
+    import os as _os
+    if _os.environ.get("THE_BUG_HUNTER_ENABLE_RECON") != "1":
+        log("recon: live scanners disabled in the_bug_hunter (set THE_BUG_HUNTER_ENABLE_RECON=1 for authorized scope)")
+        return {}
     from urllib.parse import urlparse
     if not which("gau"):
         log("params: gau not installed — skipping historical param discovery")
@@ -397,6 +401,10 @@ def _gau_urls(scope, log):
 def _katana_urls(scope, log, depth=2, timeout=150):
     """Active live crawl (katana, GET-only) -> in-scope URLs. Independent of gau's flakiness."""
     import subprocess
+    import os as _os
+    if _os.environ.get("THE_BUG_HUNTER_ENABLE_RECON") != "1":
+        log("recon: live scanners disabled in the_bug_hunter (set THE_BUG_HUNTER_ENABLE_RECON=1 for authorized scope)")
+        return {}
     if not which("katana"):
         log("params: katana not installed — skipping live crawl")
         return {}

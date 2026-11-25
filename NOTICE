@@ -11,3 +11,16 @@ It contains:
 
 The repository does NOT redistribute upstream community skills directly —
 users install them from their original sources via the bootstrap script.
+
+
+----------------------------------------------------------------------
+the_bug_hunter
+----------------------------------------------------------------------
+USCreater6/the_bug_hunter is a personalized copy of USCreater6/Claude-BugHunter
+(by Sachin Sharma), retained under its original MIT / CC BY 4.0 licenses.
+Modifications in this copy:
+  - auto-approve engine disabled (permission mode 'default', not 'bypassPermissions')
+  - live recon scanners gated OFF by default (THE_BUG_HUNTER_ENABLE_RECON)
+  - AI model pinned to claude-opus-5-5
+  - added copilot/ kit and THE_BUG_HUNTER.md
+Upstream authorship and licenses are retained.

@@ -21,14 +21,14 @@ BURP_TOOLS = [
 SHELL_TOOLS = ["Bash(curl:*)", "Bash(python3:*)", "Bash(jq:*)", "Bash(openssl:*)", "Bash(base64:*)"]
 
 
-def run_agent(task, skills_on=False, model="claude-sonnet-4-6", max_turns=40, timeout=600):
+def run_agent(task, skills_on=False, model="claude-opus-5-5", max_turns=40, timeout=600):
     # skills OFF by default: the eval showed they add ~0 capability but cost ~12-15k tokens/agent.
     has_burp = os.path.exists(MCP_CONFIG)
     config = MCP_CONFIG if has_burp else '{"mcpServers":{}}'
     allowed_tools = SHELL_TOOLS + (BURP_TOOLS if has_burp else [])
     cmd = ["claude", "-p", task,
            "--mcp-config", config, "--strict-mcp-config",
-           "--permission-mode", "bypassPermissions",
+           "--permission-mode", "default",
            "--allowedTools", " ".join(allowed_tools),
            "--max-turns", str(max_turns), "--model", model,
            "--output-format", "json"]
