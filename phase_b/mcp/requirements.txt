@@ -1,0 +1,2 @@
+# Phase B MCP server (run on the authorized VM, not on the 8GB laptop)
+mcp>=1.2

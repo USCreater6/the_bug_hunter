@@ -1,0 +1,7 @@
+{
+  "allowed_roots": [
+    "/home/you/code/a-repo-you-own",
+    "/home/you/code/an-authorized-oss-checkout"
+  ],
+  "note": "ONLY files under these roots are reviewable. Copy to scope.json and edit. Never add a path you are not authorized to read."
+}
